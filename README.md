@@ -19,7 +19,7 @@ To Setup the repo locally:
 Follow these steps:
 
 ```
-git clone https://github.com/Hemanth-Gattu/Production_House_Management.git
+git clone https://github.com/Hemanth-Gattu/Freshery.git
 ```
 
 Make sure you have python 3 and pipenv installed on your pc.
@@ -47,7 +47,7 @@ pipenv shell
 - cd into project:
 
 ```
-cd Idea_Management_Tool/
+cd Freshery-5/
 ```
 
 - Make database migrations:
