@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import ListView
 from django.db.models import Q
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -41,6 +42,14 @@ def register_user(request):
                 name=form.cleaned_data['username']
             )
             customer.save()
+            send_mail(
+                subject='Welcome!',
+                message='Hey there! Welcome to Freshery.',
+                html_message='<p><strong>Het there!</strong> Welcome to our platform.</p>',
+                from_email='freshery123@gmail.com',
+                recipient_list=[user.email],
+                fail_silently=False,
+            )
             return redirect('login')
 
     context = {'form': form}
